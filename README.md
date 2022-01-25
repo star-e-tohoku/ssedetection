@@ -12,13 +12,14 @@ Usage (See also demo.ipynb):
 - Import TrendFiltering_public as tf
 - Import packages: numpy, random, pandas, scipy, statsmodels
 - Use tf.trend_filtering(X_or,k=2,param_regularization,param_Lagrange)
-- l1 trend filtering: l1 trend filtering is the fitting of piecewise linear time series without using the prior knowledge about knots (kink points)
--- Input: X, k, param_regularization, param_Lagrange
--- X: 1-dim sequence
--- k: fitting piecewise (k-1)-polynomial
--- param_regularization: a value of regularization hyperparameter (if you would like to select it, please check the 2nd output (Cp value) discussed below)
--- param_Lagrange: a value of optimization hyperparameter (no need to optimize; default value is 1)
--- Output: list consisting of (fitting result, Cp value, 2nd order difference of fitting result)
---- fitting result: fitting result
---- Cp value: criterion for selecting the regularization hyperparameter (smaller is preferable)
---- 2nd order difference of fitting result: check that this is a sparse vector
+
+Input/Output of trend_filtering
+- Input: X, k, param_regularization, param_Lagrange
+- X: 1-dim sequence
+- k: fitting piecewise (k-1)-polynomial
+- param_regularization: a value of regularization hyperparameter (if you would like to select it, please check the 2nd output (Cp value) discussed below)
+- param_Lagrange: a value of optimization hyperparameter (no need to optimize; default value is 1)
+- Output: list consisting of (fitting result, Cp value, 2nd order difference of fitting result)
+- fitting result: fitting result
+- Cp value: criterion for selecting the regularization hyperparameter (smaller is preferable)
+- 2nd order difference of fitting result: check that this is a sparse vector
